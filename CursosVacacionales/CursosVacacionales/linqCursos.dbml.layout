@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="linqCursos">
+  <DataContextMoniker Name="/linqCursosDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1cd9b8ae-495e-4b81-baa9-7473aebcf5f4" absoluteBounds="2.5, 0.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/linqCursosDataContext/ALUMNOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5696b25e-0c85-4abb-8fa1-e9398e98acf0" absoluteBounds="2.5150000000000006, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eabc92cf-a998-47ad-86da-bbc4e364e839" absoluteBounds="2.5, 2.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/linqCursosDataContext/MATERIAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6056d5a0-aa9e-4722-a5f7-f6eb681f47ce" absoluteBounds="2.515, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb0316e9-9a0b-4621-8c88-5c0d9bee005e" absoluteBounds="5.25, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/linqCursosDataContext/CURSOALUMNOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa6f3663-6b56-425d-929c-99b336026588" absoluteBounds="5.265, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="02be4a8c-82ca-4010-82ef-dc64823b35f9" absoluteBounds="5.25, 3.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/linqCursosDataContext/CURSOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a360c165-2aa8-46f6-bf70-07a3bc1620bd" absoluteBounds="5.2650000000000006, 3.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3bed4c9-bb98-4d98-9ed0-60c5d43f3df4" absoluteBounds="2.5, 4.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/linqCursosDataContext/MAESTROS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90c6b502-a961-4f9f-9435-c04220f6a2e0" absoluteBounds="2.515, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 1.75564697265625); (5.25 : 1.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqCursosDataContext/ALUMNOS/ALUMNOS_CURSOALUMNOS" />
+      <nodes>
+        <classShapeMoniker Id="1cd9b8ae-495e-4b81-baa9-7473aebcf5f4" />
+        <classShapeMoniker Id="eb0316e9-9a0b-4621-8c88-5c0d9bee005e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 3.125); (6.25 : 2.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqCursosDataContext/CURSOS/CURSOS_CURSOALUMNOS" />
+      <nodes>
+        <classShapeMoniker Id="02be4a8c-82ca-4010-82ef-dc64823b35f9" />
+        <classShapeMoniker Id="eb0316e9-9a0b-4621-8c88-5c0d9bee005e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 3.63064697265625); (5.25 : 3.63064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqCursosDataContext/MATERIAS/MATERIAS_CURSOS" />
+      <nodes>
+        <classShapeMoniker Id="eabc92cf-a998-47ad-86da-bbc4e364e839" />
+        <classShapeMoniker Id="02be4a8c-82ca-4010-82ef-dc64823b35f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 4.69794840494792); (5.25 : 4.69794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqCursosDataContext/MAESTROS/MAESTROS_CURSOS" />
+      <nodes>
+        <classShapeMoniker Id="f3bed4c9-bb98-4d98-9ed0-60c5d43f3df4" />
+        <classShapeMoniker Id="02be4a8c-82ca-4010-82ef-dc64823b35f9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="181ea51a-c9ae-4674-86c4-c85d123e1638" absoluteBounds="6.5, 7, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/linqCursosDataContext/REPORTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aece39ae-30fc-4cec-9311-6308b08d9c64" absoluteBounds="6.515, 7.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

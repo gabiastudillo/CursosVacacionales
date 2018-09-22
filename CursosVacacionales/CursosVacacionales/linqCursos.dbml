@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bdCursosVacacionales" Class="linqCursosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bdCursosVacacionales.mdf;Integrated Security=True" SettingsObjectName="CursosVacacionales.Properties.Settings" SettingsPropertyName="bdCursosVacacionalesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ALUMNOS" Member="ALUMNOS">
+    <Type Name="ALUMNOS">
+      <Column Name="alumno_id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alumno_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alumno_adeudo" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="ALUMNOS_CURSOALUMNOS" Member="CURSOALUMNOS" ThisKey="alumno_id" OtherKey="alumno_id" Type="CURSOALUMNOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MATERIAS" Member="MATERIAS">
+    <Type Name="MATERIAS">
+      <Column Name="materia_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="materia_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="materia_semestre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MATERIAS_CURSOS" Member="CURSOS" ThisKey="materia_id" OtherKey="materia_id" Type="CURSOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CURSOALUMNOS" Member="CURSOALUMNOS">
+    <Type Name="CURSOALUMNOS">
+      <Column Name="curso_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alumno_id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cursoalumno_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="ALUMNOS_CURSOALUMNOS" Member="ALUMNOS" ThisKey="alumno_id" OtherKey="alumno_id" Type="ALUMNOS" IsForeignKey="true" />
+      <Association Name="CURSOS_CURSOALUMNOS" Member="CURSOS" ThisKey="curso_id" OtherKey="curso_id" Type="CURSOS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CURSOS" Member="CURSOS">
+    <Type Name="CURSOS">
+      <Column Name="curso_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="materia_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maestro_id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="curso_hora" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="curso_salon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CURSOS_CURSOALUMNOS" Member="CURSOALUMNOS" ThisKey="curso_id" OtherKey="curso_id" Type="CURSOALUMNOS" />
+      <Association Name="MATERIAS_CURSOS" Member="MATERIAS" ThisKey="materia_id" OtherKey="materia_id" Type="MATERIAS" IsForeignKey="true" />
+      <Association Name="MAESTROS_CURSOS" Member="MAESTROS" ThisKey="maestro_id" OtherKey="maestro_id" Type="MAESTROS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAESTROS" Member="MAESTROS">
+    <Type Name="MAESTROS">
+      <Column Name="maestro_id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maestro_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="maestro_sueldo" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="MAESTROS_CURSOS" Member="CURSOS" ThisKey="maestro_id" OtherKey="maestro_id" Type="CURSOS" />
+    </Type>
+  </Table>
+  <Table Name="" Member="REPORTE">
+    <Type Name="REPORTE">
+      <Column Name="curso_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="materia_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="curso_hora" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="curso_salon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="maestro_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alumno_id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alumno_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alumno_adeudo" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
